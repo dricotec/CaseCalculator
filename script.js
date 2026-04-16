@@ -73,7 +73,7 @@ function updateCurrencyFormatter() {
 }
 
 function proxied(url) {
-  return `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+  return `https://cors-anywhere.herokuapp.com/${encodeURIComponent(url)}`;
 }
 
 function setStatus(message, isError = false) {
