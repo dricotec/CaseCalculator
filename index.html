@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Value Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hero">
+        <h1>Case Value Calculator</h1>
+        <p>Paste a public Steam profile URL to calculate your case inventory total.</p>
+      </section>
+
+      <section class="search-panel">
+        <label for="profileUrl">Steam profile URL</label>
+        <div class="search-row">
+          <input
+            id="profileUrl"
+            type="url"
+            placeholder="https://steamcommunity.com/id/drixtec/"
+            autocomplete="off"
+          />
+          <div class="controls-row">
+            <select id="currencySelector" aria-label="Select Currency"></select>
+            <button id="calculateBtn" type="button">Calculate</button>
+          </div>
+        </div>
+        <p class="hint">Inventory must be public for this to work.</p>
+      </section>
+
+      <section id="status" class="status" role="status" aria-live="polite"></section>
+
+      <section id="summary" class="summary hidden">
+        <div>
+          <span>Total Cases</span>
+          <strong id="totalCases">0</strong>
+        </div>
+        <div>
+          <span>Estimated Value</span>
+          <strong id="totalValue">$0.00</strong>
+        </div>
+      </section>
+
+      <section id="results" class="results"></section>
+    </main>
+
+    <template id="caseCardTemplate">
+      <article class="case-card">
+        <img alt="" loading="lazy" />
+        <div class="case-card-content">
+          <h2></h2>
+          <p class="qty"></p>
+          <p class="price"></p>
+          <p class="subtotal"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
